@@ -1,0 +1,12 @@
+class NextLevelFlag
+{
+//public Flag() {}
+
+
+
+
+
+
+
+
+}
