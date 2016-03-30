@@ -1,5 +1,7 @@
-class Obstacles
+class Obstacle
 {
-// WIP
+
+  
+  
   
 }

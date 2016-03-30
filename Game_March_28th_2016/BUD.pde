@@ -6,8 +6,8 @@ class BUD {// My Lil' Bud
   //float yLoc = 400;
   //float xLoc = 20;
   float yWall = 550;
-  int pWid;
-  int pHei;
+  //int pWid;
+  //int pHei;
   
   //void BudColor(int R, int G, int B){
   //fill(R,G,B);}
@@ -25,27 +25,35 @@ class BUD {// My Lil' Bud
     if (keyPressed == true) {
       if (key == 'w' ) {
         yLoc-=Slow;
+        text("Slow", scoreX, scoreY+20 );
       } 
       if (key == 'a') {
-        xLoc-=Slow;
+        xLoc-=Slow; 
+        text("Slow", scoreX, scoreY+20 );
       }
       if (key == 'd') {
         xLoc+=Slow;
+         text("Slow", scoreX, scoreY+20 );
       } 
       if (key == 's') {
         yLoc+=Slow;
+        text("Slow", scoreX, scoreY+20 );
       }
       if (key == 'W' ) {
         yLoc-=Fast;
+       text("Fast", scoreX, scoreY+20 );
       } 
       if (key == 'A') {
         xLoc-=Fast;
+        text("Fast", scoreX, scoreY+20 );
       }
       if (key == 'D') {
         xLoc+=Fast;
+        text("Fast", scoreX, scoreY+20 );
       } 
       if (key == 'S') {
         yLoc+=Fast;
+       text("Fast", scoreX, scoreY+20 );
       }
     }
   }

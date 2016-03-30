@@ -1,5 +1,6 @@
 class Coin
 { 
+  int scoreTester = 0;
   float x;
   float y;
   //float dx = 0;
@@ -7,7 +8,7 @@ class Coin
   int dx = 0;
   int dy = 0;
 
-  void CoinLOC(int xPos, int yPos) {//where it is located
+  void LOC(int xPos, int yPos) {//where it is located
     x = xPos;
     y = yPos;
   }
@@ -24,18 +25,15 @@ class Coin
     x = xPos;
     y = yPos;
   }
-  void CoinShape(int xSize, int ySize) {
+  void Shape(int xSize, int ySize) {
     fill(255);
     ellipse(x, y, xSize, ySize);
   }
-  void Cointouched(boolean DidIHitIt){
-    if (DidIHitIt == true){
-Score++;
-    
+  void Collision() {//TRYING SO HARD TO MAKE IT WORK
+    if (xLoc >= x+pWid && xLoc >= x-pWid) {
+      if (yLoc >= y-pWid && yLoc >= y+pWid) {
+        scoreTester++;
+      }
     }
-    
-    
   }
-
-
 }
