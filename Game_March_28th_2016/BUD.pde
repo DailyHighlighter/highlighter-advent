@@ -6,46 +6,63 @@ class BUD {// My Lil' Bud
   //float yLoc = 400;
   //float xLoc = 20;
   float yWall = 550;
-  int pWid;
-  int pHei;
-  
+  //int pWid;
+  //int pHei;
+  float fullSize;
+
   //void BudColor(int R, int G, int B){
   //fill(R,G,B);}
-  
+
   void BudShape(int x, int y)
   {
     noStroke();
     
+    rect(xLoc,yLoc-pWid/2,x/2,y);
     rect(xLoc, yLoc, x, y);
     pWid = x;
     pHei = y;
-  }
+    
+  
+
+
+
+
+
+}
   void move() {//Movement section
     //if the user is holding the SHIFT key, the character moves more quickly
     if (keyPressed == true) {
       if (key == 'w' ) {
         yLoc-=Slow;
+        text("Slow", scoreX, scoreY+20 );
       } 
       if (key == 'a') {
-        xLoc-=Slow;
+        xLoc-=Slow; 
+        text("Slow", scoreX, scoreY+20 );
       }
       if (key == 'd') {
         xLoc+=Slow;
+        text("Slow", scoreX, scoreY+20 );
       } 
       if (key == 's') {
         yLoc+=Slow;
+        text("Slow", scoreX, scoreY+20 );
       }
       if (key == 'W' ) {
         yLoc-=Fast;
+        text("Fast", scoreX, scoreY+20 );
       } 
       if (key == 'A') {
         xLoc-=Fast;
+        text("Fast", scoreX, scoreY+20 );
       }
       if (key == 'D') {
         xLoc+=Fast;
+        text("Fast", scoreX, scoreY+20 );
       } 
       if (key == 'S') {
         yLoc+=Fast;
+        text("Fast", scoreX, scoreY+20 );
       }
     }
   }
@@ -98,23 +115,21 @@ class BUD {// My Lil' Bud
       yLoc+=Fast;
       xLoc-=Fast;
     }
-    
   }
 
-//KEEP THIS CODE INTACT AND UNCHANGED// 
-//OF ALL THE CODE I HAVE, I STILL DONT KNOW HOW OR WHY IT WORKS,
-//I JUST KNOW THAT IT DO.
+  //KEEP THIS CODE INTACT AND UNCHANGED// 
+  //OF ALL THE CODE I HAVE, I STILL DONT KNOW HOW OR WHY IT WORKS,
+  //I JUST KNOW THAT IT DO.
   void wallControl() {
 
-  if (yLoc < 0 || yLoc > 550-pHei) {
-    yLoc = 550-pHei;
+    if (yLoc < 0 || yLoc > 550-pHei) {
+      yLoc = 550-pHei;
+    }
+    if (yLoc < 100) {
+      yLoc = 100+(1/2)*pHei;
+    }
+    if (xLoc > width || xLoc <0 ) {
+      xLoc=0;
+    }
   }
-  if (yLoc < 100) {
-    yLoc = 100+(1/2)*pHei;
-  }
-  if (xLoc > width || xLoc < 0) {
-    xLoc=0;
-    Score++;  
-  }
-}
 }

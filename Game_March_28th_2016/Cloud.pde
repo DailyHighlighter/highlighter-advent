@@ -2,13 +2,16 @@ class Cloud
 {
   float x=50;
   float y=150;
-  public Cloud() { }
+  public Cloud() {
+  }
+  void cloudAppear(int c) {
+    fill(c);
+  }
   void cloudLOC(float x1, float y1) {
     //my ugly-as-sin cloud thing
     x1 = x;
     y1 = y;
-    
-    fill(255);
+
     noStroke();
     ellipse(x1, y1, 100, 20);
     ellipse(x1+10, y1, 20, 60);
